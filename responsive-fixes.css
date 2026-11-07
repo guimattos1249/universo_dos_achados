@@ -1,0 +1,313 @@
+/* Ajustes de composição do hero, dos CTAs e do footer. */
+.hero {
+  min-height: 760px;
+}
+
+.hero-grid {
+  min-height: 750px;
+  align-items: center;
+}
+
+.hero-copy {
+  align-self: center;
+  padding-top: 46px;
+  padding-bottom: 82px;
+}
+
+.hero-brand {
+  width: fit-content;
+  margin-bottom: 28px;
+}
+
+.hero-visual {
+  height: 650px;
+  align-self: center;
+}
+
+.hero-visual img {
+  top: 50%;
+  bottom: auto;
+  height: auto;
+  transform: translateY(-50%);
+}
+
+.button > svg,
+.mobile-bar > svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3.6;
+  padding: 2px;
+  overflow: visible;
+}
+
+.final-cta {
+  width: 100%;
+  max-width: none;
+  min-height: 390px;
+  margin-inline: 0;
+  margin-bottom: 0;
+  padding: 0;
+  border-radius: 0;
+  display: block;
+}
+
+.final-cta-inner {
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  align-items: center;
+  gap: 40px;
+  padding-block: 54px;
+}
+
+@media (min-width: 901px) {
+  .safe {
+    width: 100%;
+    max-width: none;
+    min-height: 180px;
+    border-radius: 0;
+    padding-inline: max(54px, calc((100vw - 1160px) / 2));
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 54% 46%;
+    min-height: 650px;
+  }
+
+  .hero-copy {
+    align-items: flex-start;
+    text-align: left;
+    padding: 38px 10px 70px 0;
+  }
+
+  .hero-brand {
+    margin-bottom: 24px;
+  }
+
+  .eyebrow {
+    justify-content: flex-start;
+  }
+
+  .hero-visual {
+    width: 100%;
+    height: 560px;
+    margin: 0;
+  }
+
+  .hero-visual img {
+    width: min(480px, 50vw);
+    max-width: none;
+    left: 51%;
+    transform: translate(-50%, -50%);
+  }
+
+  .photo-ring {
+    width: 410px;
+    height: 410px;
+    right: -130px;
+    top: 70px;
+  }
+
+  .card-top {
+    right: -5px;
+    top: 95px;
+  }
+
+  .card-bottom {
+    left: -12px;
+    bottom: 70px;
+  }
+
+  .final-cta-inner {
+    grid-template-columns: .65fr 1.35fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: 590px;
+  }
+
+  .hero-grid {
+    width: calc(100% - 20px);
+    grid-template-columns: 61% 39%;
+    min-height: 565px;
+  }
+
+  .hero-copy {
+    padding: 24px 0 58px;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    z-index: 4;
+  }
+
+  .hero-brand {
+    margin-bottom: 18px;
+    font-size: 19px;
+    gap: 7px;
+  }
+
+  .hero-brand svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-brand small {
+    font-size: 10px;
+  }
+
+  .hero .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.15px;
+    gap: 6px;
+  }
+
+  .hero .eyebrow span {
+    width: 18px;
+  }
+
+  .hero h1 {
+    max-width: 230px;
+    margin: 14px 0 14px;
+    font-size: clamp(27px, 7.5vw, 33px);
+    line-height: .98;
+    letter-spacing: -1.8px;
+  }
+
+  .hero-copy > p {
+    max-width: 220px;
+    margin-bottom: 17px;
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+
+  .hero-copy .button-primary {
+    width: min(220px, 100%);
+    min-height: 56px;
+    gap: 7px;
+    padding: 8px 10px;
+  }
+
+  .hero-copy .button-primary svg {
+    width: 31px;
+    height: 31px;
+    flex: 0 0 31px;
+  }
+
+  .hero-copy .button-primary span {
+    font-size: 13px;
+  }
+
+  .hero-copy .button-primary small {
+    font-size: 7px;
+    letter-spacing: .6px;
+  }
+
+  .hero-copy .button-primary b {
+    display: none;
+  }
+
+  .trust-line {
+    max-width: 220px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 19px 0 0;
+    font-size: 8.5px;
+  }
+
+  .trust-line span {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-visual {
+    height: 480px;
+    align-self: center;
+    overflow: visible;
+  }
+
+  .hero-visual img {
+    width: min(220px, 46vw);
+    left: 36%;
+    top: 51%;
+    border-width: 7px;
+  }
+
+  .photo-ring {
+    width: 230px;
+    height: 230px;
+    right: 0;
+    top: 125px;
+  }
+
+  .floating-card {
+    display: none;
+  }
+
+  .hero-wave {
+    height: 28px;
+  }
+
+  .final-cta {
+    min-height: 620px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .final-cta-inner {
+    min-height: 620px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 48px 24px 100px;
+  }
+
+  .final-cta .cta-copy {
+    order: 1;
+  }
+
+  .final-cta .cta-art {
+    order: 2;
+    margin-top: 12px;
+  }
+}
+
+.button > .whatsapp-icon,
+.mobile-bar > .whatsapp-icon {
+  display: block;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.mobile-bar > .whatsapp-icon {
+  width: 30px;
+  height: 30px;
+  flex-basis: 30px;
+}
+
+@media (max-width: 620px) {
+  .hero-copy .button-primary > .whatsapp-icon {
+    width: 31px;
+    height: 31px;
+    flex-basis: 31px;
+  }
+}
+
+/* Mantém a pincelada rosa presa à caixa da palavra em qualquer breakpoint. */
+.hero h1 em {
+  display: inline-block;
+}
+
+.hero h1 em::after {
+  height: .34em;
+  bottom: .08em;
+}
