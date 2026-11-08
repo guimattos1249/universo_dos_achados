@@ -7,7 +7,8 @@
   <meta name="theme-color" content="#7d146f">
   <title>Universo dos Achados | Ofertas no WhatsApp</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="responsive-fixes.css">
+  <link rel="stylesheet" href="responsive-fixes.css?v=7">
+  <link rel="stylesheet" href="footer-layout.css?v=2">
 </head>
 <body>
   <svg class="svg-library" aria-hidden="true">
@@ -37,7 +38,6 @@
         <a class="button button-primary js-group-link" href="#grupo">
           <img class="whatsapp-icon" src="assets/whatsapp.svg" alt="" aria-hidden="true" width="38" height="38">
           <span><small>Participação gratuita</small>Quero entrar no grupo</span>
-          <b aria-hidden="true">→</b>
         </a>
         <div class="trust-line"><span>✓</span> 100% gratuito <i></i><span>✓</span> Acesso rápido e seguro</div>
       </div>
@@ -52,33 +52,29 @@
   </section>
 
   <main>
-    <section class="intro section container reveal">
-      <div class="intro-title"><span class="kicker">Menos busca, mais economia</span><h2>Cansada de perder tempo procurando boas ofertas?</h2></div>
-      <div class="divider"></div>
-      <p>No Universo dos Achados, você recebe as melhores promoções diretamente no seu WhatsApp, sem esforço e na hora certa.</p>
-      <div class="mini-bags" aria-hidden="true"><span class="bag bag-one">♡</span><span class="bag bag-two">%</span></div>
-    </section>
-
     <section class="categories section container" aria-labelledby="categories-title">
       <div class="section-heading reveal"><span class="kicker">Tem para todo mundo</span><h2 id="categories-title">O que você encontra por aqui?</h2><p>Uma curadoria variada para deixar sua rotina mais prática — e seu bolso mais leve.</p></div>
       <div class="category-grid">
-        <article class="category-card reveal"><svg><use href="#icon-shirt"></use></svg><h3>Roupas e acessórios</h3></article>
-        <article class="category-card reveal"><svg><use href="#icon-laptop"></use></svg><h3>Eletrônicos e tecnologia</h3></article>
-        <article class="category-card reveal"><svg><use href="#icon-home"></use></svg><h3>Casa e decoração</h3></article>
-        <article class="category-card reveal"><svg><use href="#icon-beauty"></use></svg><h3>Beleza e cuidados</h3></article>
-        <article class="category-card reveal"><svg><use href="#icon-cart"></use></svg><h3>E muito mais!</h3></article>
+        <article class="category-card reveal"><img src="assets/categoria-casa.png" alt="Luminária e vaso representando produtos para casa" loading="lazy" decoding="async"><h3>Casa</h3></article>
+        <article class="category-card reveal"><img src="assets/categoria-moda.png" alt="Bolsa e óculos representando produtos de moda" loading="lazy" decoding="async"><h3>Moda</h3></article>
+        <article class="category-card reveal"><img src="assets/categoria-beleza.png" alt="Perfume e cosméticos representando produtos de beleza" loading="lazy" decoding="async"><h3>Beleza</h3></article>
+        <article class="category-card reveal"><img src="assets/categoria-decoracao.png" alt="Vaso e vela representando produtos de decoração" loading="lazy" decoding="async"><h3>Decoração</h3></article>
+        <article class="category-card reveal"><img src="assets/categoria-cozinha.png" alt="Panela e utensílios representando produtos para cozinha" loading="lazy" decoding="async"><h3>Cozinha</h3></article>
+        <article class="category-card reveal"><img src="assets/categoria-utilidades.png" alt="Organizador representando produtos de utilidades" loading="lazy" decoding="async"><h3>Utilidades</h3></article>
+        <article class="category-card reveal"><img src="assets/categoria-tecnologia.png" alt="Fones e relógio representando produtos de tecnologia" loading="lazy" decoding="async"><h3>Tecnologia</h3></article>
+        <article class="category-card reveal"><img src="assets/categoria-presentes.png" alt="Caixa com laço representando presentes" loading="lazy" decoding="async"><h3>Presentes</h3></article>
       </div>
     </section>
 
-    <section class="benefits section" aria-labelledby="benefits-title">
-      <div class="benefits-wrap container">
-        <div class="benefits-intro reveal"><span class="kicker">Por que entrar?</span><h2 id="benefits-title">Vantagens de fazer parte do grupo</h2><p>Você recebe só o que interessa, com praticidade e sem custo.</p></div>
-        <div class="benefit-grid">
-          <article class="benefit reveal"><span><svg><use href="#icon-bell"></use></svg></span><div><h3>Ofertas exclusivas</h3><p>Promoções selecionadas especialmente para o grupo.</p></div></article>
-          <article class="benefit reveal"><span><svg><use href="#icon-bolt"></use></svg></span><div><h3>Economia de verdade</h3><p>Descontos que ajudam o seu bolso.</p></div></article>
-          <article class="benefit reveal"><span><svg><use href="#icon-star"></use></svg></span><div><h3>Praticidade</h3><p>Receba tudo no WhatsApp, sem precisar procurar.</p></div></article>
-          <article class="benefit reveal"><span><svg><use href="#icon-tag"></use></svg></span><div><h3>Variedade</h3><p>Ofertas de diferentes categorias, todos os dias.</p></div></article>
-        </div>
+    <section class="intro intro-merged section container reveal">
+      <div class="intro-copy">
+        <div class="intro-title"><span class="kicker">Menos busca, mais economia</span><h2>Cansada de perder tempo procurando boas ofertas?</h2></div>
+        <p>No Universo dos Achados, você recebe as melhores promoções diretamente no seu WhatsApp, sem esforço e na hora certa.</p>
+      </div>
+      <div class="intro-benefits" aria-label="Vantagens de entrar no grupo">
+        <article class="benefit"><span><svg><use href="#icon-bell"></use></svg></span><div><h3>Ofertas exclusivas</h3><p>Promoções selecionadas especialmente para o grupo.</p></div></article>
+        <article class="benefit"><span><svg><use href="#icon-bolt"></use></svg></span><div><h3>Economia de verdade</h3><p>Descontos que ajudam o seu bolso.</p></div></article>
+        <article class="benefit"><span><svg><use href="#icon-tag"></use></svg></span><div><h3>Variedade</h3><p>Ofertas de diferentes categorias, todos os dias.</p></div></article>
       </div>
     </section>
 
@@ -93,14 +89,14 @@
     <div class="final-cta-inner container">
       <div class="cta-art" aria-hidden="true"><span class="big-bag">♡</span><span class="small-bag">%</span><i></i><b></b></div>
       <div class="cta-copy"><span class="kicker">Seu próximo achado está aqui</span><h2>Pronta para aproveitar as melhores promoções?</h2>
-        <a class="button button-light js-group-link" href="#grupo"><img class="whatsapp-icon" src="assets/whatsapp.svg" alt="" aria-hidden="true" width="38" height="38"><span>Quero entrar no grupo agora</span><b aria-hidden="true">→</b></a>
+        <a class="button button-light js-group-link" href="#grupo"><img class="whatsapp-icon" src="assets/whatsapp.svg" alt="" aria-hidden="true" width="38" height="38"><span>Quero entrar no grupo agora</span></a>
         <p>É grátis. Entre e saia quando quiser.</p>
       </div>
     </div>
   </footer>
 
-  <a class="mobile-bar js-group-link" href="#grupo"><img class="whatsapp-icon" src="assets/whatsapp.svg" alt="" aria-hidden="true" width="30" height="30"><span>Entrar no grupo grátis</span><b>→</b></a>
+  <a class="mobile-bar js-group-link" href="#grupo"><img class="whatsapp-icon" src="assets/whatsapp.svg" alt="" aria-hidden="true" width="30" height="30"><span>Entrar no grupo grátis</span></a>
   <div class="toast" role="status" aria-live="polite">Adicione o link do grupo no arquivo <strong>script.js</strong>.</div>
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

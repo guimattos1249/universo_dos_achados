@@ -1,0 +1,76 @@
+/* Regras específicas para superar o estilo genérico de footer .container. */
+.final-cta .final-cta-inner {
+  display: grid;
+  justify-content: normal;
+}
+
+@media (max-width: 1000px) {
+  .final-cta .final-cta-inner {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 56px 28px 64px;
+  }
+
+  .final-cta .cta-copy {
+    order: 1;
+    width: min(100%, 650px);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .final-cta .cta-art {
+    order: 2;
+    width: min(100%, 320px);
+    height: 230px;
+    margin: 10px auto 0;
+    justify-self: center;
+  }
+
+  .final-cta .big-bag {
+    left: calc(50% - 125px);
+  }
+
+  .final-cta .small-bag {
+    left: calc(50% + 15px);
+  }
+
+  .final-cta .cta-art i {
+    left: calc(50% + 60px);
+  }
+
+  .final-cta .cta-art b {
+    left: calc(50% + 90px);
+  }
+}
+
+@media (max-width: 620px) {
+  .final-cta .final-cta-inner {
+    gap: 10px;
+    padding: 46px 22px 52px;
+  }
+
+  .final-cta .cta-art {
+    width: min(100%, 310px);
+    height: 190px;
+    margin-top: 14px;
+  }
+
+  .final-cta .big-bag {
+    left: calc(50% - 115px);
+  }
+
+  .final-cta .small-bag {
+    left: calc(50% + 25px);
+  }
+
+  .final-cta .cta-art i {
+    left: calc(50% + 70px);
+  }
+
+  .final-cta .cta-art b {
+    left: calc(50% + 100px);
+  }
+}

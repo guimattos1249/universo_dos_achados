@@ -41,3 +41,27 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
 
   document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 }
+
+const mobileBar = document.querySelector(".mobile-bar");
+const hero = document.querySelector(".hero");
+const footer = document.querySelector(".final-cta");
+
+if (mobileBar && hero && footer && "IntersectionObserver" in window) {
+  let heroVisible = true;
+  let footerVisible = false;
+
+  const updateMobileBar = () => {
+    mobileBar.classList.toggle("is-visible", !heroVisible && !footerVisible);
+  };
+
+  const visibilityObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.target === hero) heroVisible = entry.isIntersecting;
+      if (entry.target === footer) footerVisible = entry.isIntersecting;
+    });
+    updateMobileBar();
+  }, { threshold: 0 });
+
+  visibilityObserver.observe(hero);
+  visibilityObserver.observe(footer);
+}
