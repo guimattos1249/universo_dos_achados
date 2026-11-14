@@ -486,6 +486,8 @@
   transition:
     opacity .34s ease,
     transform .46s cubic-bezier(.22, 1, .36, 1),
+    filter .28s ease,
+    box-shadow .28s ease,
     visibility 0s linear .46s !important;
 }
 
@@ -575,6 +577,46 @@
   filter: brightness(0) invert(1);
 }
 
+/* Feedback suave e consistente nos CTAs de WhatsApp. */
+.button-primary,
+.button-light {
+  transition:
+    transform .3s cubic-bezier(.22, 1, .36, 1),
+    box-shadow .3s ease,
+    filter .3s ease;
+  will-change: transform, filter;
+}
+
+.button-primary:hover,
+.button-light:hover {
+  transform: translateY(-3px) scale(1.015);
+  filter: brightness(1.06) saturate(1.06);
+  box-shadow: 0 12px 0 rgba(32, 113, 23, .25), 0 24px 36px rgba(35, 136, 24, .3);
+}
+
+.button-primary:active,
+.button-light:active {
+  transform: translateY(1px) scale(.99);
+  box-shadow: 0 6px 0 rgba(32, 113, 23, .24), 0 12px 24px rgba(35, 136, 24, .22);
+}
+
+.button-primary:focus-visible,
+.button-light:focus-visible,
+.mobile-bar:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, .95);
+  outline-offset: 4px;
+}
+
+.mobile-bar.is-visible:hover {
+  transform: translate3d(0, -3px, 0) scale(1.015);
+  filter: brightness(1.06) saturate(1.06);
+  box-shadow: 0 14px 34px rgba(29, 115, 21, .42);
+}
+
+.mobile-bar.is-visible:active {
+  transform: translate3d(0, 1px, 0) scale(.99);
+}
+
 .mobile-bar > .whatsapp-icon {
   width: 30px;
   height: 30px;
@@ -643,6 +685,466 @@
 
 .intro-benefits .benefit h3 {
   margin-top: 0;
+}
+
+/* Hero aprovado: cena doméstica natural ao fundo e foto menor da criadora. */
+.hero {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255, 255, 255, .9), transparent 29%),
+    linear-gradient(120deg, #fffaf7 0%, #fce8f5 48%, #edcfe8 100%);
+}
+
+.hero-grid {
+  grid-template-columns: .9fr 1.1fr;
+  gap: 34px;
+}
+
+.hero-copy {
+  z-index: 5;
+}
+
+.hero-copy > .hero-ribbon {
+  width: fit-content;
+  margin: -10px 0 19px;
+  padding: 4px 14px 5px;
+  border-radius: 999px 20px 999px 26px;
+  background: #dff4ae;
+  color: #5f185e;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.15;
+  transform: rotate(-1deg);
+}
+
+.hero-copy > .hero-ribbon + p {
+  max-width: 520px;
+  margin-bottom: 24px;
+  font-size: 17px;
+  line-height: 1.48;
+}
+
+.hero-visual {
+  height: 620px;
+  isolation: isolate;
+}
+
+.hero > .appliance-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: 70% center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  opacity: .96;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 43%, rgba(0, 0, 0, .2) 52%, #000 72%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, transparent 43%, rgba(0, 0, 0, .2) 52%, #000 72%, #000 100%);
+}
+
+.hero-visual .creator-photo {
+  position: absolute;
+  top: 44px;
+  right: 20px;
+  left: auto;
+  bottom: auto;
+  z-index: 4;
+  width: 236px;
+  height: 236px;
+  max-width: none;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 42%;
+  border: 8px solid rgba(255, 255, 255, .92);
+  border-radius: 50%;
+  box-shadow: 0 20px 46px rgba(67, 16, 79, .26);
+  transform: none;
+}
+
+.hero-visual .photo-ring {
+  z-index: 3;
+  top: 29px;
+  right: 5px;
+  width: 266px;
+  height: 266px;
+  border: 2px solid rgba(112, 22, 111, .32);
+}
+
+.hero-visual .photo-ring::after {
+  display: none;
+}
+
+.hero-note {
+  position: absolute;
+  z-index: 5;
+  top: 23px;
+  right: 236px;
+  color: var(--purple);
+  font-family: "Segoe Print", "Comic Sans MS", cursive;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  transform: rotate(-8deg);
+}
+
+.hero-note::after {
+  content: "↘";
+  position: absolute;
+  right: -22px;
+  bottom: -20px;
+  font-size: 24px;
+}
+
+.hero-visual .card-bottom {
+  z-index: 5;
+  left: 23px;
+  bottom: 51px;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 55% 45%;
+    gap: 8px;
+  }
+
+  .hero-copy > .hero-ribbon + p {
+    max-width: 440px;
+    font-size: 15px;
+  }
+
+  .hero > .appliance-scene {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: 69% center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, rgba(0, 0, 0, .35) 52%, #000 70%, #000 100%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 45%, rgba(0, 0, 0, .35) 52%, #000 70%, #000 100%);
+  }
+
+  .hero-visual .creator-photo {
+    top: 59px;
+    right: 24px;
+    width: 214px;
+    height: 214px;
+  }
+
+  .hero-visual .photo-ring {
+    top: 46px;
+    right: 10px;
+    width: 242px;
+    height: 242px;
+  }
+
+  .hero-note {
+    top: 31px;
+    right: 188px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-grid {
+    grid-template-columns: 61% 39%;
+    gap: 0;
+  }
+
+  .hero h1 {
+    max-width: 245px;
+  }
+
+  .hero-copy > .hero-ribbon {
+    margin: -7px 0 12px;
+    padding: 3px 8px 4px;
+    font-size: 10px;
+  }
+
+  .hero-copy > .hero-ribbon + p {
+    max-width: 224px;
+    margin-bottom: 15px;
+    font-size: 11px;
+    line-height: 1.38;
+  }
+
+  .hero-visual {
+    height: 470px;
+  }
+
+  .hero > .appliance-scene {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: 77% center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, rgba(0, 0, 0, .4) 52%, #000 64%, #000 100%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 45%, rgba(0, 0, 0, .4) 52%, #000 64%, #000 100%);
+  }
+
+  .hero-visual .creator-photo {
+    top: 84px;
+    right: 8px;
+    width: 150px;
+    height: 150px;
+    border-width: 6px;
+  }
+
+  .hero-visual .photo-ring {
+    top: 76px;
+    right: 0;
+    width: 166px;
+    height: 166px;
+  }
+
+  .hero-note {
+    display: block;
+    top: 62px;
+    right: 82px;
+    width: 76px;
+    font-size: 9px;
+    line-height: 1.08;
+  }
+
+  .hero-note::after {
+    right: -10px;
+    bottom: -14px;
+    font-size: 16px;
+  }
+
+  .hero-visual .card-bottom {
+    display: none;
+  }
+}
+
+/* Vantagens imediatas: quatro cards sempre na mesma linha. */
+.quick-benefits {
+  position: relative;
+  z-index: 6;
+  margin-top: 8px;
+}
+
+.quick-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.quick-benefit-card {
+  min-width: 0;
+  min-height: 82px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 1px solid #f0d9ed;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .98), #faedf8);
+  box-shadow: 0 14px 30px rgba(83, 18, 87, .1);
+  text-align: left;
+}
+
+.quick-benefit-card > span {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: #f8ddf4;
+  color: #9c238b;
+}
+
+.quick-benefit-card > div {
+  min-width: 0;
+}
+
+.quick-benefit-card svg {
+  width: 32px;
+  height: 32px;
+}
+
+.quick-benefit-card h2 {
+  min-width: 0;
+  margin: 0;
+  color: var(--purple);
+  font-size: 17px;
+  line-height: 1.18;
+  letter-spacing: -.35px;
+}
+
+@media (max-width: 760px) {
+  .quick-benefits {
+    width: calc(100% - 20px);
+    margin-top: -6px;
+  }
+
+  .quick-benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .quick-benefit-card {
+    min-height: 82px;
+    padding: 11px 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+    border-radius: 17px;
+    text-align: left;
+  }
+
+  .quick-benefit-card > span {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    border-radius: 13px;
+  }
+
+  .quick-benefit-card svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .quick-benefit-card h2 {
+    font-size: clamp(11px, 3.15vw, 13px);
+    line-height: 1.14;
+    letter-spacing: -.12px;
+  }
+
+}
+
+/* Bloco inspirado na referência: presente, chamada e benefícios em cards. */
+.why-group {
+  padding: 34px 38px;
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: 34px;
+  align-items: center;
+  border: 1px solid #f0d9ed;
+  border-radius: 30px;
+  background: linear-gradient(110deg, #fff 0%, #fff7fd 34%, #f7dcf3 100%);
+  box-shadow: var(--shadow);
+}
+
+.why-group-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.why-group-heading img {
+  width: 126px;
+  height: 126px;
+  flex: 0 0 126px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 14px 30px rgba(83, 18, 87, .14);
+}
+
+.why-group-heading h2 {
+  margin: 7px 0 0;
+  color: var(--purple);
+  font-size: clamp(27px, 3vw, 40px);
+  line-height: 1.02;
+  letter-spacing: -1.6px;
+}
+
+.why-group-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.why-group-card {
+  min-width: 0;
+  min-height: 76px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid #eccfea;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 8px 20px rgba(83, 18, 87, .07);
+}
+
+.why-group-card > span {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #f8ddf4;
+  color: #9c238b;
+}
+
+.why-group-card svg {
+  width: 25px;
+  height: 25px;
+}
+
+.why-group-card h3 {
+  margin: 0;
+  color: var(--purple);
+  font-size: 14px;
+  line-height: 1.18;
+}
+
+@media (max-width: 900px) {
+  .why-group {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .why-group-heading {
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+@media (max-width: 620px) {
+  .why-group {
+    padding: 24px 18px;
+    gap: 18px;
+    border-radius: 24px;
+  }
+
+  .why-group-heading {
+    gap: 13px;
+  }
+
+  .why-group-heading img {
+    width: 88px;
+    height: 88px;
+    flex-basis: 88px;
+    border-radius: 18px;
+  }
+
+  .why-group-heading h2 {
+    font-size: 26px;
+    letter-spacing: -1px;
+  }
+
+  .why-group-cards {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .why-group-card {
+    min-height: 66px;
+    padding: 10px 12px;
+  }
+
+  .why-group-card h3 {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 900px) {
