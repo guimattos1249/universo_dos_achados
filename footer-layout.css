@@ -53,24 +53,39 @@
   }
 
   .final-cta .cta-art {
-    width: min(100%, 310px);
-    height: 190px;
+    width: min(100%, 260px);
+    height: 155px;
     margin-top: 14px;
   }
 
   .final-cta .big-bag {
-    left: calc(50% - 115px);
+    width: 112px;
+    height: 110px;
+    left: calc(50% - 93px);
+    font-size: 45px;
   }
 
   .final-cta .small-bag {
-    left: calc(50% + 25px);
+    width: 74px;
+    height: 69px;
+    left: calc(50% + 20px);
+    font-size: 30px;
   }
 
   .final-cta .cta-art i {
-    left: calc(50% + 70px);
+    width: 7px;
+    height: 34px;
+    left: calc(50% + 52px);
   }
 
   .final-cta .cta-art b {
-    left: calc(50% + 100px);
+    width: 7px;
+    height: 34px;
+    left: calc(50% + 76px);
+  }
+
+  .final-cta .big-bag::before,
+  .final-cta .small-bag::before {
+    border-width: 6px;
   }
 }

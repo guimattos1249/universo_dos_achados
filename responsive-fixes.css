@@ -730,22 +730,22 @@
 
 .hero > .appliance-scene {
   position: absolute;
-  inset: 0;
+  inset: 0 0 0 32%;
   z-index: 0;
-  width: 100%;
+  width: 68%;
   height: 100%;
   max-width: none;
   aspect-ratio: auto;
   object-fit: cover;
-  object-position: 70% center;
+  object-position: right center;
   border: 0;
   border-radius: 0;
   box-shadow: none;
   transform: none;
   opacity: .96;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 43%, rgba(0, 0, 0, .2) 52%, #000 72%, #000 100%);
-  mask-image: linear-gradient(to right, transparent 0%, transparent 43%, rgba(0, 0, 0, .2) 52%, #000 72%, #000 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .35) 13%, #000 30%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .35) 13%, #000 30%, #000 100%);
 }
 
 .hero-visual .creator-photo {
@@ -783,23 +783,71 @@
 .hero-note {
   position: absolute;
   z-index: 5;
-  top: 23px;
+  top: 4px;
   right: 236px;
+  padding: 8px 11px;
   color: var(--purple);
+  background: rgba(255, 255, 255, .88);
+  border: 1px solid rgba(112, 22, 111, .18);
+  border-radius: 16px 16px 8px 16px;
+  box-shadow: 0 8px 22px rgba(67, 16, 79, .18);
+  backdrop-filter: blur(7px);
   font-family: "Segoe Print", "Comic Sans MS", cursive;
   font-size: 16px;
-  font-weight: 700;
-  line-height: 1.15;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.2px;
   text-align: center;
+  text-shadow: 0 1px 0 #fff;
   transform: rotate(-8deg);
 }
 
-.hero-note::after {
-  content: "↘";
+.hero-note-arrow {
   position: absolute;
-  right: -22px;
-  bottom: -20px;
-  font-size: 24px;
+  left: calc(100% - 2px);
+  top: 7px;
+  width: 46px;
+  height: 34px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 1px 2px rgba(67, 16, 79, .3));
+  transform-origin: 8px 8px;
+  animation: hero-arrow-float 2.4s ease-in-out infinite;
+}
+
+.hero-note-arrow-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hero-arrow-draw 2.4s ease-in-out infinite;
+}
+
+.hero-note-arrow-head {
+  fill: currentColor;
+  stroke: none;
+  animation: hero-arrow-head 2.4s ease-in-out infinite;
+  transform-origin: 49px 33px;
+}
+
+@keyframes hero-arrow-draw {
+  0%, 12% { stroke-dashoffset: 1; opacity: 0; }
+  24% { opacity: 1; }
+  58%, 88% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@keyframes hero-arrow-head {
+  0%, 48% { opacity: 0; transform: translate(-3px, -2px) scale(.8); }
+  62%, 88% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(2px, 1px) scale(1); }
+}
+
+@keyframes hero-arrow-float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(2px, 2px) rotate(2deg); }
 }
 
 .hero-visual .card-bottom {
@@ -823,9 +871,9 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    object-position: 69% center;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, rgba(0, 0, 0, .35) 52%, #000 70%, #000 100%);
-    mask-image: linear-gradient(to right, transparent 0%, transparent 45%, rgba(0, 0, 0, .35) 52%, #000 70%, #000 100%);
+    object-position: right center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 28%, rgba(0, 0, 0, .45) 38%, #000 58%, #000 100%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 28%, rgba(0, 0, 0, .45) 38%, #000 58%, #000 100%);
   }
 
   .hero-visual .creator-photo {
@@ -843,7 +891,7 @@
   }
 
   .hero-note {
-    top: 31px;
+    top: 16px;
     right: 188px;
     font-size: 13px;
   }
@@ -880,9 +928,9 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    object-position: 77% center;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, rgba(0, 0, 0, .4) 52%, #000 64%, #000 100%);
-    mask-image: linear-gradient(to right, transparent 0%, transparent 45%, rgba(0, 0, 0, .4) 52%, #000 64%, #000 100%);
+    object-position: 84% center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 30%, rgba(0, 0, 0, .45) 48%, #000 64%, #000 100%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 30%, rgba(0, 0, 0, .45) 48%, #000 64%, #000 100%);
   }
 
   .hero-visual .creator-photo {
@@ -902,21 +950,37 @@
 
   .hero-note {
     display: block;
-    top: 62px;
+    top: 52px;
     right: 82px;
-    width: 76px;
+    width: 82px;
+    padding: 5px 7px;
+    border-radius: 11px 11px 6px 11px;
     font-size: 9px;
     line-height: 1.08;
   }
 
-  .hero-note::after {
-    right: -10px;
-    bottom: -14px;
-    font-size: 16px;
+  .hero-note-arrow {
+    left: calc(100% - 8px);
+    top: 4px;
+    width: 34px;
+    height: 31px;
+    stroke-width: 2;
   }
 
   .hero-visual .card-bottom {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-note-arrow,
+  .hero-note-arrow-line,
+  .hero-note-arrow-head {
+    animation: none;
+  }
+
+  .hero-note-arrow-line {
+    stroke-dashoffset: 0;
   }
 }
 
