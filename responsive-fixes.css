@@ -129,6 +129,18 @@
   }
 }
 
+.hero-copy .button-primary {
+  width: min(100%, 320px);
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  padding-inline: 14px;
+}
+
+.hero-copy .button-primary span {
+  white-space: nowrap;
+}
+
 @media (max-width: 620px) {
   .hero {
     min-height: 590px;
@@ -191,8 +203,8 @@
   .hero-copy .button-primary {
     width: min(220px, 100%);
     min-height: 56px;
-    gap: 7px;
-    padding: 8px 10px;
+    gap: 9px;
+    padding: 8px 12px;
   }
 
   .hero-copy .button-primary svg {
@@ -988,7 +1000,7 @@
 .quick-benefits {
   position: relative;
   z-index: 6;
-  margin-top: 8px;
+  margin-top: 36px;
 }
 
 .quick-benefit-grid {
@@ -1044,7 +1056,7 @@
 @media (max-width: 760px) {
   .quick-benefits {
     width: calc(100% - 20px);
-    margin-top: -6px;
+    margin-top: 28px;
   }
 
   .quick-benefit-grid {
@@ -1081,6 +1093,18 @@
     letter-spacing: -.12px;
   }
 
+}
+
+@media (max-width: 620px) {
+  .categories.section {
+    margin-top: 28px;
+  }
+}
+
+@media (min-width: 621px) {
+  .categories.section {
+    margin-top: 48px;
+  }
 }
 
 /* Bloco inspirado na referência: presente, chamada e benefícios em cards. */
